@@ -1,7 +1,7 @@
 import { createMachine } from "xstate";
 
-const bookMachine = createMachine({
-  id: "buy plane ticktes",
+const bookingMachine = createMachine({
+  id: "buy plane tickets",
   initial: "initial",
   states: {
     initial: {
@@ -15,17 +15,18 @@ const bookMachine = createMachine({
         CANCEL: "initial",
       },
     },
-    passengers: {
-      on: {
-        DONE: "ticktes",
-      },
-    },
-    ticktes: {
+    tickets: {
       on: {
         FINISH: "initial",
+      },
+    },
+    passengers: {
+      on: {
+        DONE: "tickets",
+        CANCEL: "initial",
       },
     },
   },
 });
 
-export default bookMachine;
+export default bookingMachine;
