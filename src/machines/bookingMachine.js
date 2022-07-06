@@ -2,9 +2,9 @@ import { createMachine } from "xstate";
 
 const bookMachine = createMachine({
   id: "buy plane ticktes",
-  initial: "inicial",
+  initial: "initial",
   states: {
-    inicial: {
+    initial: {
       on: {
         START: "search",
       },
@@ -12,7 +12,7 @@ const bookMachine = createMachine({
     search: {
       on: {
         CONTINUE: "passengers",
-        CANCEL: "inicial",
+        CANCEL: "initial",
       },
     },
     passengers: {
@@ -22,7 +22,7 @@ const bookMachine = createMachine({
     },
     ticktes: {
       on: {
-        FINISH: "inicial",
+        FINISH: "initial",
       },
     },
   },
