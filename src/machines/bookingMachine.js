@@ -27,7 +27,10 @@ const bookingMachine = createMachine(
               selectedCountry: (context, event) => event.selectedCountry,
             }),
           },
-          CANCEL: "initial",
+          CANCEL: {
+            target: "initial",
+            actions: "cleanContext",
+          },
         },
       },
       tickets: {
@@ -38,7 +41,10 @@ const bookingMachine = createMachine(
       passengers: {
         on: {
           DONE: "tickets",
-          CANCEL: "initial",
+          CANCEL: {
+            target: "initial",
+            actions: "cleanContext",
+          },
           ADD: {
             target: "passengers",
             actions: assign((context, event) =>
@@ -51,6 +57,10 @@ const bookingMachine = createMachine(
   },
   {
     actions: {
+      cleanContext: assign({
+        selectedCountry: "",
+        passengers: [],
+      }),
       imprimirInicio: () => console.log("Imprimir inicio"),
       imprimirEntrada: () => console.log("Imprimir entrada a search"),
       imprimirSalida: () => console.log("Imprimir salida del search"),
