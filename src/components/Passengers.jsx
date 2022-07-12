@@ -5,13 +5,9 @@ export const Passengers = ({ state, send }) => {
   const { passengers } = state.context;
   const [value, changeValue] = useState("");
 
-  const onChangeInput = (e) => {
-    changeValue(e.target.value);
-  };
+  const onChangeInput = (e) => changeValue(e.target.value);
 
-  const goToTicket = () => {
-    send("DONE");
-  };
+  const goToTicket = () => send("DONE");
 
   const submit = (e) => {
     e.preventDefault();

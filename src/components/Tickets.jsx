@@ -2,9 +2,7 @@ import React from "react";
 import "../styles/Tickets.css";
 
 export const Tickets = ({ send, context }) => {
-  const finish = () => {
-    send("FINISH");
-  };
+  const finish = () => send("FINISH");
 
   return (
     <div className="Tickets">

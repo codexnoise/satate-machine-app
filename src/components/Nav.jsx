@@ -2,9 +2,7 @@ import React from "react";
 import "../styles/Nav.css";
 
 export const Nav = ({ state, send }) => {
-  const goToWelcome = () => {
-    send("CANCEL");
-  };
+  const goToWelcome = () => send("CANCEL");
 
   return (
     <nav className="Nav">

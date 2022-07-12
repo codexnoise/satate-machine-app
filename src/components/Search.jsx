@@ -5,13 +5,9 @@ export const Search = ({ state, send }) => {
   const { countries } = state.context;
   const [flight, setFlight] = useState("");
 
-  const goToPassengers = () => {
-    send("CONTINUE", { selectedCountry: flight });
-  };
+  const goToPassengers = () => send("CONTINUE", { selectedCountry: flight });
 
-  const handleSelectChange = (event) => {
-    setFlight(event.target.value);
-  };
+  const handleSelectChange = (event) => setFlight(event.target.value);
 
   const options = countries;
 

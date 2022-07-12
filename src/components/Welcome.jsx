@@ -2,9 +2,7 @@ import React from "react";
 import "../styles/Welcome.css";
 
 export const Welcome = ({ send }) => {
-  const startBooking = () => {
-    send("START");
-  };
+  const startBooking = () => send("START");
 
   return (
     <div className="Welcome">
