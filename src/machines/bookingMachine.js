@@ -94,6 +94,10 @@ const bookingMachine = createMachine(
               context.passengers.push(event.newPassenger)
             ),
           },
+          RETURN: {
+            target: "search",
+            actions: "cleanContext",
+          },
         },
       },
     },
